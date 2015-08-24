@@ -2,7 +2,7 @@ require 'test_helper'
 require 'allpay'
  
 class AllpayTest < ActiveSupport::TestCase
-  test '#make_make' do
+  test '#make_mac' do
     allpay = Allpay.new merchant_id: '12345678', hash_key: 'xdfaefasdfasdfa32d', hash_iv: 'sdfxfafaeafwexfe'
     mac = allpay.make_mac(
       ItemName: 'sdfasdfa',

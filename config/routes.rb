@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+
+  namespace :admin do
+    resources :orders
+  end
+  namespace :admin do
+    resources :products
+  end
+  root to: "products#index"
+  resources :products, only: :show
+  resource :cart, only: [:show, :update] # 應付沒有/:id
+  resources :orders, only: [:new, :show, :create] do
+    get :checkout, on: :member
+  end
+
+
+  post 'allpay/result'
+  post 'allpay/return'
+
+  resources :line_items
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
