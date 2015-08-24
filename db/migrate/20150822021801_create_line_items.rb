@@ -5,7 +5,7 @@ class CreateLineItems < ActiveRecord::Migration
       t.references :cart, index: true, foreign_key: true
       t.references :product, index: true, foreign_key: true
       t.decimal :unit_price, null: false
-      t.integer :quantity, null: false, default: 1新訂單
+      t.integer :quantity, null: false, default: 1
 
       t.timestamps null: false
     end
