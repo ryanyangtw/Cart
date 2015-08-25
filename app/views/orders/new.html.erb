@@ -5,6 +5,6 @@
 <%= form_for @order do |f| %>
   <%= f.text_field :name, placeholder: 'NAME' %>
   <%= f.text_field :address, placeholder: 'ADDRESS' %>
-  <%= f.select :payment_method, %w[Credit ATM] %>
+  <%= f.select :payment_method, %w[Credit ATM CVS BARCODE ALL] %>
   <%= f.submit %>
 <% end %>
